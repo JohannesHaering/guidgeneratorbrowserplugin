@@ -1,0 +1,29 @@
+{
+
+  "manifest_version": 2,
+  "name": "GuidGenerator",
+  "version": "1.0",
+
+  "description": "Generates GUID in a chosen format and adds it to your clip board",
+  "icons": {
+    "48": "icon.svg"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.svg",
+    "default_title": "GUID",
+    "default_popup": "src/choose_guidformat.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["createGuid.js"]
+    }
+  ]
+
+}
